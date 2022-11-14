@@ -17,7 +17,7 @@ namespace DataAccess.Concrete.EntityFramework
         {
             using (ReCapProjectContext context = new ReCapProjectContext())
             {
-                var result = from c in context.Cars
+                var result = from c in context.Car
                              join b in context.Brands
                              on c.BrandId equals b.BrandId
                              join cl in context.Colors
@@ -32,6 +32,28 @@ namespace DataAccess.Concrete.EntityFramework
                              };
                 return result.ToList();
             }
+
+
+        }
+
+        public List<CarDetailDto> GetCarDetailsByBrandId(int brandId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarDetailsByCarId(int carId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarDetailsByColorAndByBrand(int colorId, int brandId)
+        {
+            throw new NotImplementedException();
+        }
+
+        public List<CarDetailDto> GetCarDetailsByColorId(int colorId)
+        {
+            throw new NotImplementedException();
         }
     }
 }
